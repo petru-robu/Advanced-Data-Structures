@@ -1,6 +1,7 @@
 # Advanced Data Structures
 This repository contains implementations for **Skip-Lists**, **Splay-Trees** and **B-Trees** data structures. The program tests the structures against different 
-tests and distributions of queries to find the best and worst case scenarios for each data structure.
+tests and distributions of queries to find the best and worst case scenarios for each data structure. <br>
+The correctness of our implementations is tested on the problem here: [abce](https://www.infoarena.ro/problema/abce), where our structures get 100p.
 ## Skip Lists
 
 **Skip Lists** are probabilistic data structures that allow fast search, insertion, and deletion within an ordered sequence of elements. 
