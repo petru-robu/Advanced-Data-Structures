@@ -1,0 +1,6 @@
+---Processing file: ./tests/insertion_heavy0.in ---
+test_splay time: 1.0080033630 seconds
+test_skip time: 6.8146847370 seconds
+test_btree time: 1.2128798110 seconds
+---Processing file: ./tests/insertion_heavy1.in ---
+test_splay time: 1.0225834470 seconds

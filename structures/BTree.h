@@ -133,8 +133,8 @@ private:
         for (i = 0; i < n; i++) {
             if (leaf == false)
                 child[i]->traverse(x, y);
-            if (key[i] >= x && key[i] <= y)
-                cout << key[i] << " ";
+            //if (key[i] >= x && key[i] <= y)
+                //cout << key[i] << " ";
         }
 
         // Print the subtree rooted with last child
