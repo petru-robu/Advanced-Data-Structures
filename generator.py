@@ -52,32 +52,32 @@ def generate_test(p1:int, p2:int, p3:int, num_queries:int = 100_000, max_val:int
 
 def generator():
     #tests with insertions and few searches
-    for i in range(3):
+    for i in range(5):
         path = "./tests/insertion_heavy" + str(i) + '.in'
         print(path)
 
-        generate_test(80, 10, 10, num_queries=100_000, filename=path)
+        generate_test(70, 20, 10, num_queries=750_000, filename=path)
     
-    #tests with insertions and deletions
-    for i in range(3):
-        path = "./tests/insert_remove_heavy" + str(i) + '.in'
+    #tests with deletions and few searches
+    for i in range(5):
+        path = "./tests/remove_heavy" + str(i) + '.in'
         print(path)
 
-        generate_test(45, 45, 10, num_queries=100_000, filename=path)
+        generate_test(20, 70, 10, num_queries=750_000, filename=path)
 
     #tests with few insertions and a lot of searches
-    for i in range(3):
+    for i in range(5):
         path = "./tests/search_heavy" + str(i) + '.in'
         print(path)
 
-        generate_test(15, 5, 80, num_queries=100_000, filename=path)
+        generate_test(10, 10, 80, num_queries=750_000, filename=path)
 
     #average tests
-    for i in range(3):
+    for i in range(5):
         path = "./tests/average" + str(i) + '.in'
         print(path)
 
-        generate_test(25, 25, 50, num_queries=100_000, filename=path)
+        generate_test(25, 25, 50, num_queries=750_000, filename=path)
 
 
 

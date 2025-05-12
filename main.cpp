@@ -93,7 +93,7 @@ void test_skip(std::string file_path)
 void test_btree(std::string file_path)
 {
     std::ifstream fin(file_path);
-    BTree t(2);
+    BTree t(32);
     int Q;
     fin >> Q;
     while (Q--) 
@@ -144,15 +144,23 @@ std::vector<std::string> input_files = {
         "./tests/insertion_heavy0.in",
         "./tests/insertion_heavy1.in",
         "./tests/insertion_heavy2.in",
-        "./tests/insert_remove_heavy0.in",
-        "./tests/insert_remove_heavy1.in",
-        "./tests/insert_remove_heavy2.in",
+        "./tests/insertion_heavy3.in",
+        "./tests/insertion_heavy4.in",
+        "./tests/remove_heavy0.in",
+        "./tests/remove_heavy1.in",
+        "./tests/remove_heavy2.in",
+        "./tests/remove_heavy3.in",
+        "./tests/remove_heavy4.in",
         "./tests/search_heavy0.in",
         "./tests/search_heavy1.in",
         "./tests/search_heavy2.in",
+        "./tests/search_heavy3.in",
+        "./tests/search_heavy4.in",
         "./tests/average0.in",
         "./tests/average1.in",
-        "./tests/average2.in"
+        "./tests/average2.in",
+        "./tests/average3.in",
+        "./tests/average4.in"
     };
 
 
@@ -161,19 +169,21 @@ int main()
     std::ofstream fout("output.txt");
     for (const auto& x : input_files) 
     {
+        std::cout << "---Processing file: " << x << " ---" << std::endl;
         fout << "---Processing file: " << x << " ---" << std::endl;
         // Time test_splay
         auto start_splay = std::chrono::high_resolution_clock::now();
         test_splay(x);
         auto end_splay = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration_splay = end_splay - start_splay;
-        fout << "test_splay time: " << std::fixed << std::setprecision(10) << duration_splay.count() << " seconds" << std::endl;
+        std::cout << "test_splay time: " << std::fixed << std::setprecision(10) << duration_splay.count() << " seconds" << std::endl;
 
         // Time test_skip
         auto start_skip = std::chrono::high_resolution_clock::now();
         test_skip(x);
         auto end_skip = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration_skip = end_skip - start_skip;
+        std::cout << "test_skip time: " << std::fixed << std::setprecision(10) << duration_skip.count() << " seconds" << std::endl;
         fout << "test_skip time: " << std::fixed << std::setprecision(10) << duration_skip.count() << " seconds" << std::endl;
 
         // Time test_btree
@@ -181,7 +191,8 @@ int main()
         test_btree(x);
         auto end_btree = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration_btree= end_btree - start_btree;
-        fout << "test_btree time: " << std::fixed << std::setprecision(10) << duration_btree.count() << " seconds" << std::endl;
+        std::cout << "test_btree time: " << std::fixed << std::setprecision(10) << duration_btree.count() << " seconds" << std::endl;
+        fout << "test_skip time: " << std::fixed << std::setprecision(10) << duration_skip.count() << " seconds" << std::endl;
     }
     return 0;
 }
