@@ -38,16 +38,16 @@ Here are the time complexities of our structures:
 ## Average Times (in seconds)
 The structures were tested against different types of tests: 
 -  **insertion_heavy** (80% insertions, 10% deletions, 10% searches)
--  **insert_remove_heavy** (45% insertions, 45% deletions, 10% searches)
+-  **remove_heavy** (10% insertions, 80% deletions, 10% searches)
 -  **search_heavy** (15% insertions, 5% deletions, 80% searches)
 -  **average** (25% insertions, 25% deletions, 50% searches).
 
-| Test Category         | Splay   | Skip    | BTree   |
-|-----------------------|---------|---------|---------|
-| Insertion Heavy       | 0.9831  | 6.4496  | 1.3195  |
-| Insertion and removal heavy   | 0.5572 | 3.1343  | 0.6317  |
-| Search heavy          | 1.3579 | 7.6694  | 1.4928  |
-| Average               | 1.4561  | 8.1279  | 1.5692  |
+| Test Category     | Splay   | Skip     | BTree   |
+|-------------------|---------|----------|---------|
+| insertion_heavy   | 37.8314 | 200.7107 | 7.7781  |
+| remove_heavy      | 6.2501  | 25.7067  | 1.4903  |
+| search_heavy      | 42.5288 | 163.7164 | 8.3895  |
+| average           | 56.5361 | 290.4156 | 11.7024 |
  
 *Note: The results are obtained by taking the average on multiple tests in the same category.*
 
